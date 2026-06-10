@@ -1,34 +1,45 @@
-# Password Strength Checker
+Password Strength Checker
 
-Author: Rahul Battu  
-Internship: CodeZoner Cybersecurity Portfolio Project  
-Repository: `https://github.com/rahulbattu15-boop/password-strength-checker`
+Author: Rahul Battu
 
-## Live Demo
+Internship: CodeZoner Cybersecurity Portfolio Project
+
+Repository: https://github.com/rahulbattu15-boop/password-strength-checker
+
+Live Demo
 
 Live link: https://rahulbattu15-boop.github.io/password-strength-checker/
 
 ## Problem Statement
 
-Weak passwords are one of the common reasons for account hacking and cybersecurity breaches. Students often create short passwords, reuse simple words, or avoid special characters because they do not know how password strength is checked. This project helps users understand password safety by checking password length, character variety, common-password patterns, repeated characters, and simple sequences.
+Weak passwords are a reason for account hacking and cybersecurity breaches. Many students create passwords that're too simple or do not use special characters. This project helps users understand password safety by checking password length, character variety, common patterns, repeated characters and simple sequences
 
 ## Solution
 
-Password Strength Checker is a cybersecurity awareness tool that checks a sample password and gives a strength result: Weak, Medium, or Strong. It also gives suggestions to improve the password. The project includes dataset analysis, data cleaning, feature engineering, visualizations, a Python password-checking script, and a browser demo. The demo runs fully inside the browser and does not save or upload passwords.
-
+The Password Strength Checker is a tool that checks a sample password and gives a strength result: Weak, Medium or Strong. It also provides suggestions to improve the password. The project includes dataset analysis, data cleaning, feature engineering, visualizations a Python password-checking script and a browser demo. The demo runs fully inside the browser. Does not save or upload passwords.
 ## Features
 
-- Checks password length
-- Checks lowercase and uppercase letters
-- Checks numbers
-- Checks special characters
-- Warns against common passwords
-- Warns against repeated characters and simple sequences
-- Shows score out of 100
-- Shows Weak, Medium, or Strong result
-- Gives improvement suggestions
-- Includes dataset analysis and charts
-- Includes a browser-based demo in `index.html`
+* Checks password length
+
+* Checks for lowercase and uppercase letters
+
+* Checks for numbers
+
+* Checks for characters
+
+* Warns against passwords
+
+* Warns against repeated characters and simple sequences
+
+* Shows a score out of 100
+
+* Shows Weak, Medium or Strong result
+
+* Gives improvement suggestions
+
+* Includes dataset analysis and charts
+
+* Includes a browser-based demo in index.html
 
 ## Screenshots
 
@@ -50,23 +61,33 @@ Password Strength Checker is a cybersecurity awareness tool that checks a sample
 
 ## Dataset Information
 
-The dataset is stored in the `data` folder.
+The dataset is stored in the data folder.
 
-- Raw dataset: `data/passwords_dataset.csv`
-- Cleaned dataset: `data/cleaned_passwords_dataset.csv`
-- Feature dataset: `data/password_features.csv`
-- Rows: 10,000
-- Main columns: Password, Length, Strength, Has Lowercase, Has Uppercase, Has Special Character
+* dataset: data/passwords_dataset.csv
+
+* Cleaned dataset: data/cleaned_passwords_dataset.csv
+
+* Feature dataset: data/password_features.csv
+
+* Rows: 10,000
+
+* Main columns: Password, Length, Strength, Has Lowercase, Has Uppercase, Has Special Character
 
 ## Technologies Used
 
-- Python
-- pandas
-- Pillow
-- HTML
-- CSS
-- JavaScript
-- Git and GitHub
+* Python
+
+* pandas
+
+* Pillow
+
+* HTML
+
+* CSS
+
+* JavaScript
+
+* Git and GitHub
 
 ## Project Structure
 
@@ -132,19 +153,26 @@ python src/password_checker.py
 
 ## Results
 
-- Average password length is around 9.42 characters.
-- Strong passwords are the majority class in the dataset.
-- Weak passwords are mostly short and have fewer character types.
-- Passwords with uppercase letters, lowercase letters, numbers, and special characters are usually stronger.
+* Average password length is 9.42 characters.
+
+* Strong passwords are the majority class in the dataset.
+
+* Weak passwords are mostly short. Have fewer character types.
+
+*  Passwords with letters, lowercase letters, numbers and special characters are usually stronger.
 
 ## Security Note
 
-Do not enter real personal passwords in demos or recordings. The browser demo checks the password locally and does not save or upload it.
+Do not enter personal passwords, in demos or recordings. The browser demo checks the password locally. Does not save or upload it.
 
 ## Future Improvements
 
-- Add a password generator
-- Add leaked-password detection using a safe API
-- Add a full mobile-friendly UI
-- Add model-based password strength prediction
-- Deploy the project using GitHub Pages, Netlify, or Vercel
+* Add a password generator
+
+* Add leaked-password detection using an API
+
+* Add a full mobile-friendly UI
+
+* Add model-based password strength prediction
+
+* Deploy the project using GitHub Pages, Netlify or Vercel
