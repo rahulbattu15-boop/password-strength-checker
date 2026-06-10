@@ -13,4 +13,4 @@ Cleaning steps completed:
 - Recalculated lowercase, uppercase, and special-character flags.
 - Standardized the strength label text.
 
-Cleaned file saved at `C:/Users/rahul/Documents/Codex/2026-06-09/files-mentioned-by-the-user-codezoner/work/password-strength-checker-repo/data/cleaned_passwords_dataset.csv`.
+Cleaned file saved at `"D:\password-strength-checker\data\cleaned_passwords_dataset.csv"`.
