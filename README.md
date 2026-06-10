@@ -6,7 +6,7 @@ Repository: `https://github.com/rahulbattu15-boop/password-strength-checker`
 
 ## Live Demo
 
-Live link: add your GitHub Pages or Netlify link here after deployment.
+Live link: https://rahulbattu15-boop.github.io/password-strength-checker/
 
 ## Problem Statement
 
