@@ -1,29 +1,45 @@
-# Day 3: Data Exploration
+# Day 3: Looking At The Data
 
-Dataset shape: 10000 rows x 6 columns
+The dataset has 10000 rows and 6 columns.
 
-## Columns
+## What Is In The Columns
 
-Password, Has Lowercase, Has Uppercase, Has Special Character, Length, Strength
+We have columns for Password Has Lowercase Has Uppercase Has Special Character, Length and Strength.
 
-## Missing Values
+## Are There Any Missing Values
 
-- Password: 0
-- Has Lowercase: 0
-- Has Uppercase: 0
-- Has Special Character: 0
-- Length: 0
-- Strength: 0
+- Password: there are no missing values
 
-## Key Findings
+- Has Lowercase: there are no missing values
 
-- Average password length: 9.42
-- Shortest password length: 3
-- Longest password length: 16
-- Strength distribution: {'Strong': 5952, 'Weak': 2197, 'Medium': 1851}
-- Longer passwords and a mix of character types usually improve password strength.
+- Has there are no missing values
 
-## Charts
+- Has Special Character: there are no missing values
 
-- `docs/strength_distribution.png`
-- `docs/password_length_distribution.png`
+- Length: there are no missing values
+
+- Strength: there are no missing values
+
+## What Did We Find Out
+
+- The average length of a password is 9.42
+
+- The shortest password is 3 characters long
+
+- The longest password is 16 characters long
+
+- When we look at the strength of the passwords we see that
+
+5952 Passwords are Strong
+
+2197 Passwords are Weak
+
+1851 Passwords are Medium
+
+- Passwords that are longer and have a mix of character types are usually stronger.
+
+## Charts We Made
+
+- we have a chart that shows the strength distribution of the passwords in `docs/strength_distribution.png`
+
+- we have a chart that shows the length distribution of the passwords, in `docs/password_length_distribution.png`
