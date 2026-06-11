@@ -74,7 +74,7 @@ The dataset is stored in the data folder.
 * Main columns: Password, Length, Strength, Has Lowercase, Has Uppercase, Has Special Character
 
 ## Technologies Used
-
+Mostly used HTML,CSS, JavaScript
 * Python
 
 * pandas
@@ -119,6 +119,7 @@ password-strength-checker/
 ## Setup Steps
 
 1. Clone or download this repository.
+Removed becuse it is not used for long time(2-6)
 2. Install Python dependencies:
 
 ```bash
