@@ -2,15 +2,15 @@
 
 ##
 
-The Password Strength Checker project is about helping students learn if their passwordsre strong or weak. This project checks how long a password is, if it has letters, big letters, numbers, special characters and if its a common password or not.
+The Password Strength Checker project is about helping students learn if their passwords are strong or weak. This project checks how long a password is, if it has letters, big letters, numbers, special characters and if its a common password or not.
 
 ## Objective
 
-The main goal is to make a tool that tells users how strong their password is and gives them tips to make it better. We also looked at a dataset to understand password patterns.
+The main goal is to make a tool that tells users how strong their password is and gives them tips to make it better. I also looked at a dataset to understand password patterns.
 
 ## Dataset
 
-We used a dataset with 10,000 passwords. It has information like the password itself how long it is, what types of characters it has and how strong it is.
+I used a dataset with 10,000 passwords. It has information like the password itself how long it is, what types of characters it has and how strong it is.
 
 ## Work Completed
 
@@ -32,7 +32,7 @@ We used a dataset with 10,000 passwords. It has information like the password it
 
 ## Result
 
-The project works by checking a password and saying if it's Weak, Medium or Strong. It also gives suggestions like using characters adding big letters adding numbers adding special characters and not using common passwords.
+The project works by checking a password and saying if it's Weak, Medium or Strong. It also gives suggestions like using characters adding big letters,  adding numbers, adding special characters, and not using common passwords.
 
 ##
 
