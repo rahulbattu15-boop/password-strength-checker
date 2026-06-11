@@ -1,33 +1,39 @@
 # Password Strength Checker Project Report
 
-## Introduction
+##
 
-Password Strength Checker is a cybersecurity awareness project created to help students understand how strong or weak a password is. The project checks password length, lowercase letters, uppercase letters, numbers, special characters, common passwords, repeated characters, and simple sequences.
+The Password Strength Checker project is about helping students learn if their passwordsre strong or weak. This project checks how long a password is, if it has letters, big letters, numbers, special characters and if its a common password or not.
 
 ## Objective
 
-The main objective is to build a simple tool that gives users a password strength result and practical suggestions for improvement. The project also includes dataset analysis so the password patterns can be studied and explained clearly.
+The main goal is to make a tool that tells users how strong their password is and gives them tips to make it better. We also looked at a dataset to understand password patterns.
 
 ## Dataset
 
-The dataset contains 10,000 password records with columns for password text, password length, character-type flags, and strength category.
+We used a dataset with 10,000 passwords. It has information like the password itself how long it is, what types of characters it has and how strong it is.
 
 ## Work Completed
 
-- Created project folder structure.
-- Added password dataset.
-- Explored the dataset and generated charts.
-- Cleaned the data and saved a cleaned CSV file.
-- Created new features such as number check, character variety score, long password flag, and estimated score.
-- Built a Python password checker.
-- Built a browser demo using HTML, CSS, and JavaScript.
-- Updated README and final submission documents.
+- I set up the project folder.
+
+- I added the password dataset.
+
+- I looked at the dataset. Made some charts.
+
+- I cleaned the data. Saved it as a new file.
+
+- I added features like checking for numbers a score for character variety, a flag for long passwords and an estimated score.
+
+- I built a password checker using Python.
+
+- I made a demo that runs in a browser using HTML, CSS and JavaScript.
+
+- I updated the README and final submission documents.
 
 ## Result
 
-The project successfully checks a password and classifies it as Weak, Medium, or Strong. It also gives suggestions such as using more characters, adding uppercase letters, adding numbers, adding special characters, and avoiding common passwords.
+The project works by checking a password and saying if it's Weak, Medium or Strong. It also gives suggestions like using characters adding big letters adding numbers adding special characters and not using common passwords.
 
-## Conclusion
+##
 
-This project is useful for cybersecurity learning because it teaches users how password strength is measured. It can be improved further by adding a password generator, leaked-password checking, and a more advanced machine learning model.
-
+This project is good, for learning about cybersecurity because it teaches users how to measure password strength. We can make it better by adding a password generator checking for leaked passwords and using a machine learning model.
