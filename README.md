@@ -100,26 +100,21 @@ password-strength-checker/
 │   ├── passwords_dataset.csv
 │   ├── cleaned_passwords_dataset.csv
 │   └── password_features.csv
-├── docs/
-│   ├── day3_insights.md
-│   ├── day4_insights.md
-│   ├── day5_insights.md
-│   ├── project_report.md
-│   ├── final_submission_description.md
-│   ├── demo_video_script.md
-│   ├── strength_distribution.png
-│   └── password_length_distribution.png
-└── src/
-    ├── data_exploration.py
-    ├── data_cleaning.py
-    ├── feature_engineering.py
-    └── password_checker.py
-```
+└── docs/
+     ├── day3_insights.md
+     ├── day4_insights.md
+     ├── day5_insights.md
+     ├── project_report.md
+     ├── final_submission_description.md
+     ├── demo_video_script.md
+     ├── strength_distribution.png
+     └── password_length_distribution.png
+....
 
 ## Setup Steps
 
 1. Clone or download this repository.
-Removed becuse it is not used for long time(2-6)
+Removed because it has not been used for a long time(2-6)
 2. Install Python dependencies:
 
 ```bash
@@ -164,7 +159,7 @@ python src/password_checker.py
 
 ## Security Note
 
-Do not enter personal passwords, in demos or recordings. The browser demo checks the password locally. Does not save or upload it.
+Do not enter personal passwords in demos or recordings. The browser demo checks the password locally. Does not save or upload it.
 
 ## Future Improvements
 
