@@ -25,9 +25,9 @@ The Password Strength Checker is a tool that checks a sample password and gives 
 
 * Checks for numbers
 
-* Checks for characters
+* Checks for special characters
 
-* Warns against passwords
+* Warns against common passwords
 
 * Warns against repeated characters and simple sequences
 
@@ -36,6 +36,10 @@ The Password Strength Checker is a tool that checks a sample password and gives 
 * Shows Weak, Medium or Strong result
 
 * Gives improvement suggestions
+
+* Shows passed password checks in the browser demo
+
+* Includes basic JavaScript tests for the checker logic
 
 * Includes dataset analysis and charts
 
@@ -67,6 +71,8 @@ The dataset is stored in the data folder.
 
 * Cleaned dataset: data/cleaned_passwords_dataset.csv
 
+* Processed cleaned dataset: data/processed/cleaned_passwords_dataset.csv
+
 * Feature dataset: data/password_features.csv
 
 * Rows: 10,000
@@ -96,14 +102,28 @@ password-strength-checker/
 ├── index.html
 ├── README.md
 ├── requirements.txt
+├── src/
+│   └── password_checker.js
+├── tests/
+│   └── password_checker.test.js
 ├── data/
 │   ├── passwords_dataset.csv
 │   ├── cleaned_passwords_dataset.csv
-│   └── password_features.csv
+│   ├── password_features.csv
+│   └── processed/
+│       └── cleaned_passwords_dataset.csv
 └── docs/
      ├── day3_insights.md
      ├── day4_insights.md
      ├── day5_insights.md
+     ├── day8_core_feature_1.md
+     ├── day9_core_feature_2.md
+     ├── day10_core_feature_3.md
+     ├── day11_validation_error_handling.md
+     ├── day12_testing.md
+     ├── day13_bug_fixes_polish.md
+     ├── day14_week2_review.md
+     ├── week2_report.md
      ├── project_report.md
      ├── final_submission_description.md
      ├── demo_video_script.md
@@ -142,10 +162,12 @@ python src/feature_engineering.py
 6. Run the password checker:
 
 ```bash
-python src/password_checker.py
+node tests/password_checker.test.js
 ```
 
 7. Open `index.html` in a browser for the web demo.
+
+8. The Week 2 daily work is documented in `docs/day8_core_feature_1.md` through `docs/day14_week2_review.md`.
 
 ## Results
 
@@ -156,6 +178,8 @@ python src/password_checker.py
 * Weak passwords are mostly short. Have fewer character types.
 
 *  Passwords with letters, lowercase letters, numbers and special characters are usually stronger.
+
+* Week 2 core features are complete: password scoring, improvement suggestions and browser demo integration.
 
 ## Security Note
 

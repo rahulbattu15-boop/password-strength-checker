@@ -224,6 +224,10 @@
       padding: 12px;
     }
 
+    .passed {
+      margin-top: 20px;
+    }
+
     @media (max-width: 820px) {
       .grid,
       .stats {
@@ -288,97 +292,26 @@
         <ul id="suggestions">
           <li>No suggestions yet.</li>
         </ul>
+
+        <h2 class="passed">Passed Checks</h2>
+        <ul id="passedChecks">
+          <li>No checks passed yet.</li>
+        </ul>
       </aside>
     </div>
   </main>
 
+  <script src="src/password_checker.js"></script>
   <script>
-    const commonPasswords = new Set([
-      "123456", "123456789", "password", "qwerty", "admin",
-      "welcome", "iloveyou", "abc123", "password123", "rahul123"
-    ]);
-
-    function checkPassword(password) {
-      let score = 0;
-      const passed = [];
-      const suggestions = [];
-      const lower = password.toLowerCase();
-
-      if (password.length >= 12) {
-        score += 30;
-        passed.push("Good length");
-      } else if (password.length >= 8) {
-        score += 18;
-        passed.push("Acceptable length");
-        suggestions.push("Use at least 12 characters for stronger protection.");
-      } else {
-        suggestions.push("Use at least 8 characters. 12 or more is better.");
-      }
-
-      if (/[a-z]/.test(password)) {
-        score += 12;
-        passed.push("Contains lowercase letters");
-      } else {
-        suggestions.push("Add lowercase letters.");
-      }
-
-      if (/[A-Z]/.test(password)) {
-        score += 12;
-        passed.push("Contains uppercase letters");
-      } else {
-        suggestions.push("Add uppercase letters.");
-      }
-
-      if (/\d/.test(password)) {
-        score += 12;
-        passed.push("Contains numbers");
-      } else {
-        suggestions.push("Add numbers.");
-      }
-
-      if (/[^A-Za-z0-9]/.test(password)) {
-        score += 14;
-        passed.push("Contains special characters");
-      } else {
-        suggestions.push("Add special characters such as @, #, $, %, or !.");
-      }
-
-      if (!commonPasswords.has(lower)) {
-        score += 10;
-        passed.push("Not in the common-password list");
-      } else {
-        suggestions.push("Avoid common passwords such as password, 123456, or qwerty.");
-      }
-
-      if (!/(.)\1{2,}/.test(password)) {
-        score += 5;
-      } else {
-        suggestions.push("Avoid repeating the same character many times.");
-      }
-
-      if (!/(1234|abcd|qwer|asdf)/.test(lower)) {
-        score += 5;
-      } else {
-        suggestions.push("Avoid simple sequences such as 1234, abcd, or qwer.");
-      }
-
-      if (!password) {
-        return { score: 0, strength: "Weak", suggestions: ["Enter a password to check its strength."] };
-      }
-
-      score = Math.min(score, 100);
-      const strength = score >= 75 ? "Strong" : score >= 45 ? "Medium" : "Weak";
-      return { score, strength, suggestions: suggestions.length ? suggestions : ["Great work. This password follows the main safety rules."] };
-    }
-
     function render() {
       const password = document.getElementById("passwordInput").value;
-      const result = checkPassword(password);
+      const result = PasswordStrengthChecker.checkPassword(password);
       const badge = document.getElementById("badge");
       const score = document.getElementById("score");
       const meter = document.getElementById("meterBar");
       const summary = document.getElementById("summary");
       const suggestions = document.getElementById("suggestions");
+      const passedChecks = document.getElementById("passedChecks");
       const color = result.strength === "Strong" ? "#15803d" : result.strength === "Medium" ? "#b45309" : "#b42318";
 
       badge.className = `badge ${result.strength}`;
@@ -397,9 +330,22 @@
         item.textContent = text;
         suggestions.appendChild(item);
       });
+
+      passedChecks.innerHTML = "";
+      const checks = result.passed.length ? result.passed : ["No checks passed yet."];
+      checks.forEach((text) => {
+        const item = document.createElement("li");
+        item.textContent = text;
+        passedChecks.appendChild(item);
+      });
     }
 
     document.getElementById("checkBtn").addEventListener("click", render);
+    document.getElementById("passwordInput").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        render();
+      }
+    });
     document.getElementById("weakBtn").addEventListener("click", () => {
       document.getElementById("passwordInput").value = "rahul123";
       render();
