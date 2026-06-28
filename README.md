@@ -16,11 +16,7 @@ Weak passwords are a reason for account hacking and cybersecurity breaches. Many
 
 ## Solution
 
-<<<<<<< HEAD
-The Password Strength Checker is a tool that checks a sample password and gives a strength result: Weak, Medium or Strong. It also provides suggestions to improve the password. The project includes dataset analysis, data cleaning, feature engineering, visualizations a Python password-checking script and a browser demo. The demo runs fully inside the browser. Does not save or upload passwords.
-=======
 The Password Strength Checker is a tool that checks a sample password and gives a strength result: Weak, Medium or Strong. It also provides suggestions to improve the password. The project includes dataset analysis, data cleaning, feature engineering, visualizations, JavaScript checker logic and a browser demo. The demo runs fully inside the browser. It does not save or upload passwords.
->>>>>>> master
 ## Features
 
 * Checks password length
@@ -43,8 +39,6 @@ The Password Strength Checker is a tool that checks a sample password and gives 
 
 * Shows passed password checks in the browser demo
 
-<<<<<<< HEAD
-=======
 * Generates strong sample passwords locally
 
 * Lets users choose generated password length and character types
@@ -55,7 +49,6 @@ The Password Strength Checker is a tool that checks a sample password and gives 
 
 * Includes a copy button for generated sample passwords
 
->>>>>>> master
 * Includes basic JavaScript tests for the checker logic
 
 * Includes dataset analysis and charts
@@ -72,13 +65,10 @@ The Password Strength Checker is a tool that checks a sample password and gives 
 
 ![Strong Password Demo](docs/screenshots/app_strong_password.png)
 
-<<<<<<< HEAD
-=======
 ### Web Demo - Password Generator
 
 ![Password Generator Demo](docs/screenshots/app_generator.png)
 
->>>>>>> master
 ### Password Strength Distribution
 
 ![Password Strength Distribution](docs/strength_distribution.png)
@@ -104,16 +94,7 @@ The dataset is stored in the data folder.
 * Main columns: Password, Length, Strength, Has Lowercase, Has Uppercase, Has Special Character
 
 ## Technologies Used
-<<<<<<< HEAD
-Mostly used HTML,CSS, JavaScript
-* Python
-
-* pandas
-
-* Pillow
-=======
 Mostly used HTML, CSS and JavaScript
->>>>>>> master
 
 * HTML
 
@@ -151,9 +132,6 @@ password-strength-checker/
      ├── day12_testing.md
      ├── day13_bug_fixes_polish.md
      ├── day14_week2_review.md
-<<<<<<< HEAD
-     ├── week2_report.md
-=======
      ├── day15_advanced_feature_1.md
      ├── day16_advanced_feature_2.md
      ├── day17_ui_design_polish.md
@@ -164,7 +142,6 @@ password-strength-checker/
      ├── week2_report.md
      ├── week3_report.md
      ├── week4_plan.md
->>>>>>> master
      ├── project_report.md
      ├── final_submission_description.md
      ├── demo_video_script.md
@@ -175,53 +152,18 @@ password-strength-checker/
 ## Setup Steps
 
 1. Clone or download this repository.
-<<<<<<< HEAD
-Removed because it has not been used for a long time(2-6)
-2. Install Python dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Run data exploration:
-
-```bash
-python src/data_exploration.py
-```
-
-4. Run data cleaning:
-
-```bash
-python src/data_cleaning.py
-```
-
-5. Run feature engineering:
-
-```bash
-python src/feature_engineering.py
-```
-
-6. Run the password checker:
-=======
 
 2. Run the checker tests:
->>>>>>> master
 
 ```bash
 node tests/password_checker.test.js
 ```
 
-<<<<<<< HEAD
-7. Open `index.html` in a browser for the web demo.
-
-8. The Week 2 daily work is documented in `docs/day8_core_feature_1.md` through `docs/day14_week2_review.md`.
-=======
 3. Open `index.html` in a browser for the web demo.
 
 4. The Week 2 daily work is documented in `docs/day8_core_feature_1.md` through `docs/day14_week2_review.md`.
 
 5. The Week 3 daily work is documented in `docs/day15_advanced_feature_1.md` through `docs/day21_week3_review.md`.
->>>>>>> master
 
 ## Results
 
@@ -235,28 +177,16 @@ node tests/password_checker.test.js
 
 * Week 2 core features are complete: password scoring, improvement suggestions and browser demo integration.
 
-<<<<<<< HEAD
-=======
 * Week 3 advanced features are complete: password generator, checklist, risk estimate and UI polish.
 
->>>>>>> master
 ## Security Note
 
 Do not enter personal passwords in demos or recordings. The browser demo checks the password locally. Does not save or upload it.
 
 ## Future Improvements
 
-<<<<<<< HEAD
-* Add a password generator
-
 * Add leaked-password detection using an API
 
-* Add a full mobile-friendly UI
-
-=======
-* Add leaked-password detection using an API
-
->>>>>>> master
 * Add model-based password strength prediction
 
 * Deploy the project using GitHub Pages, Netlify or Vercel

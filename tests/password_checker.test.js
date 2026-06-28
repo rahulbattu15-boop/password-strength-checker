@@ -1,10 +1,7 @@
 const assert = require("assert");
 const {
   checkPassword,
-<<<<<<< HEAD
-=======
   generatePassword,
->>>>>>> master
   hasRepeatedCharacters,
   hasSimpleSequence,
 } = require("../src/password_checker");
@@ -24,10 +21,7 @@ runTest("empty password returns clear weak result", () => {
   assert.strictEqual(result.score, 0);
   assert.strictEqual(result.strength, "Weak");
   assert.ok(result.suggestions.includes("Enter a password to check its strength."));
-<<<<<<< HEAD
-=======
   assert.ok(result.checklist.every((check) => check.passed === false));
->>>>>>> master
 });
 
 runTest("common password is weak and gets a warning", () => {
@@ -60,8 +54,6 @@ runTest("pattern helpers detect repeated characters and sequences", () => {
   assert.strictEqual(hasSimpleSequence("Safe1234!"), true);
   assert.strictEqual(hasSimpleSequence("Safe9275!"), false);
 });
-<<<<<<< HEAD
-=======
 
 runTest("generated password uses requested length and character types", () => {
   const password = generatePassword({
@@ -94,4 +86,3 @@ runTest("generator requires at least one selected character type", () => {
     special: false,
   }), /Select at least one character type/);
 });
->>>>>>> master

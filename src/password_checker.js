@@ -37,8 +37,6 @@
     return "Weak";
   }
 
-<<<<<<< HEAD
-=======
   function getChecklist(password) {
     const hasInput = password.trim().length > 0;
     return [
@@ -69,7 +67,6 @@
     return "Easy to guess";
   }
 
->>>>>>> master
   function checkPassword(input) {
     const password = normalizePassword(input);
     const lower = password.toLowerCase();
@@ -82,11 +79,8 @@
         score: 0,
         strength: "Weak",
         passed,
-<<<<<<< HEAD
-=======
         checklist: getChecklist(""),
         crackTime: estimateCrackTime(0, 0),
->>>>>>> master
         suggestions: ["Enter a password to check its strength."],
       };
     }
@@ -160,21 +154,14 @@
       score,
       strength: getStrength(score),
       passed,
-<<<<<<< HEAD
-=======
       checklist: getChecklist(password),
       crackTime: estimateCrackTime(score, password.length),
->>>>>>> master
       suggestions: suggestions.length
         ? suggestions
         : ["Great work. This password follows the main safety rules."],
     };
   }
 
-<<<<<<< HEAD
-  const api = {
-    checkPassword,
-=======
   function generatePassword(options) {
     const settings = Object.assign({
       length: 16,
@@ -236,7 +223,6 @@
     estimateCrackTime,
     generatePassword,
     getChecklist,
->>>>>>> master
     getStrength,
     hasRepeatedCharacters,
     hasSimpleSequence,

@@ -15,11 +15,8 @@
       --amber: #b45309;
       --red: #b42318;
       --blue: #2563eb;
-<<<<<<< HEAD
-=======
       --blue-dark: #1d4ed8;
       --teal: #0f766e;
->>>>>>> master
     }
 
     * {
@@ -37,12 +34,9 @@
       background: var(--paper);
       border-bottom: 1px solid var(--line);
       padding: 18px 24px;
-<<<<<<< HEAD
-=======
       position: sticky;
       top: 0;
       z-index: 2;
->>>>>>> master
     }
 
     .topbar,
@@ -140,20 +134,15 @@
       padding: 10px 14px;
     }
 
-<<<<<<< HEAD
-=======
     button:hover {
       background: var(--blue-dark);
     }
 
->>>>>>> master
     .secondary {
       background: #e7eef6;
       color: var(--ink);
     }
 
-<<<<<<< HEAD
-=======
     .secondary:hover {
       background: #d7e3f0;
     }
@@ -166,7 +155,6 @@
       background: #115e59;
     }
 
->>>>>>> master
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -261,11 +249,6 @@
       margin-top: 20px;
     }
 
-<<<<<<< HEAD
-    @media (max-width: 820px) {
-      .grid,
-      .stats {
-=======
     .tool-panel {
       border-top: 1px solid var(--line);
       margin-top: 22px;
@@ -365,7 +348,6 @@
       .grid,
       .stats,
       .generator-controls {
->>>>>>> master
         grid-template-columns: 1fr;
       }
 
@@ -374,13 +356,10 @@
         align-items: stretch;
         flex-direction: column;
       }
-<<<<<<< HEAD
-=======
 
       .range-row {
         grid-template-columns: 1fr;
       }
->>>>>>> master
     }
   </style>
 </head>
@@ -418,8 +397,6 @@
           <button id="strongBtn" class="secondary" type="button">Strong Sample</button>
         </div>
 
-<<<<<<< HEAD
-=======
         <div class="tool-panel">
           <h2>Password Generator</h2>
           <p>Create a strong sample password locally, then check it with the same scoring system.</p>
@@ -444,7 +421,6 @@
           <div id="generatorMessage" class="toast" aria-live="polite"></div>
         </div>
 
->>>>>>> master
         <div class="privacy">
           This demo runs fully in your browser. It does not save passwords, upload passwords, or connect to any server.
         </div>
@@ -457,14 +433,11 @@
         <div class="meter"><span id="meterBar" style="width: 0%; background: #b42318;"></span></div>
         <p id="summary">Enter a sample password and run the check.</p>
 
-<<<<<<< HEAD
-=======
         <div class="risk">
           <strong>Risk Estimate</strong>
           <span id="crackTime">No password entered</span>
         </div>
 
->>>>>>> master
         <h2>Suggestions</h2>
         <ul id="suggestions">
           <li>No suggestions yet.</li>
@@ -474,14 +447,11 @@
         <ul id="passedChecks">
           <li>No checks passed yet.</li>
         </ul>
-<<<<<<< HEAD
-=======
 
         <h2 class="passed">Security Checklist</h2>
         <ul id="checklist" class="checklist">
           <li><span class="status-dot status-fail"></span>Enter a password to start.</li>
         </ul>
->>>>>>> master
       </aside>
     </div>
   </main>
@@ -497,11 +467,8 @@
       const summary = document.getElementById("summary");
       const suggestions = document.getElementById("suggestions");
       const passedChecks = document.getElementById("passedChecks");
-<<<<<<< HEAD
-=======
       const checklist = document.getElementById("checklist");
       const crackTime = document.getElementById("crackTime");
->>>>>>> master
       const color = result.strength === "Strong" ? "#15803d" : result.strength === "Medium" ? "#b45309" : "#b42318";
 
       badge.className = `badge ${result.strength}`;
@@ -514,10 +481,7 @@
         : result.strength === "Medium"
           ? "This password is usable but should be improved."
           : "This password is weak and should not be used.";
-<<<<<<< HEAD
-=======
       crackTime.textContent = result.crackTime;
->>>>>>> master
       suggestions.innerHTML = "";
       result.suggestions.forEach((text) => {
         const item = document.createElement("li");
@@ -532,8 +496,6 @@
         item.textContent = text;
         passedChecks.appendChild(item);
       });
-<<<<<<< HEAD
-=======
 
       checklist.innerHTML = "";
       result.checklist.forEach((check) => {
@@ -554,7 +516,6 @@
         numbers: document.getElementById("numberOption").checked,
         special: document.getElementById("specialOption").checked,
       };
->>>>>>> master
     }
 
     document.getElementById("checkBtn").addEventListener("click", render);
@@ -571,8 +532,6 @@
       document.getElementById("passwordInput").value = "Rahul@2026#Secure";
       render();
     });
-<<<<<<< HEAD
-=======
     document.getElementById("lengthInput").addEventListener("input", (event) => {
       document.getElementById("lengthValue").textContent = event.target.value;
     });
@@ -600,7 +559,6 @@
         message.textContent = "Copy was blocked by the browser. Select the password and copy it manually.";
       }
     });
->>>>>>> master
     document.getElementById("toggleBtn").addEventListener("click", () => {
       const input = document.getElementById("passwordInput");
       const button = document.getElementById("toggleBtn");
