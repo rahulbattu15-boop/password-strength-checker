@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Password Strength Checker</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e2ec;
+      --paper: #ffffff;
+      --wash: #f5f7fb;
+      --green: #15803d;
+      --amber: #b45309;
+      --red: #b42318;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --teal: #0f766e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--wash);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+
+    header {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .topbar,
+    main {
+      margin: 0 auto;
+      max-width: 1100px;
+    }
+
+    .topbar {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 20px;
+    }
+
+    .brand span,
+    p,
+    .hint {
+      color: var(--muted);
+    }
+
+    main {
+      padding: 32px 24px 56px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: minmax(0, 1fr) 380px;
+    }
+
+    section,
+    aside,
+    .stat {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    section,
+    aside {
+      padding: 22px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 14px;
+    }
+
+    p {
+      line-height: 1.55;
+      margin: 0 0 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    input {
+      border: 1px solid #b7c4d1;
+      border-radius: 6px;
+      flex: 1;
+      font-size: 16px;
+      min-height: 46px;
+      padding: 10px 12px;
+    }
+
+    button {
+      background: var(--blue);
+      border: 0;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 700;
+      min-height: 46px;
+      padding: 10px 14px;
+    }
+
+    button:hover {
+      background: var(--blue-dark);
+    }
+
+    .secondary {
+      background: #e7eef6;
+      color: var(--ink);
+    }
+
+    .secondary:hover {
+      background: #d7e3f0;
+    }
+
+    .success {
+      background: var(--teal);
+    }
+
+    .success:hover {
+      background: #115e59;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .meter {
+      background: #edf2f7;
+      border-radius: 999px;
+      height: 14px;
+      margin: 18px 0;
+      overflow: hidden;
+    }
+
+    .meter span {
+      display: block;
+      height: 100%;
+      transition: width 0.2s ease;
+    }
+
+    .score {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1;
+      margin: 8px 0;
+    }
+
+    .badge {
+      border-radius: 999px;
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 10px;
+    }
+
+    .Weak {
+      background: #fee4e2;
+      color: var(--red);
+    }
+
+    .Medium {
+      background: #fef3c7;
+      color: var(--amber);
+    }
+
+    .Strong {
+      background: #dcfce7;
+      color: var(--green);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .stats {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 20px;
+    }
+
+    .stat {
+      padding: 14px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+    }
+
+    .stat span,
+    .hint {
+      font-size: 13px;
+    }
+
+    .privacy {
+      background: #eef6ff;
+      border-left: 4px solid var(--blue);
+      border-radius: 6px;
+      margin-top: 18px;
+      padding: 12px;
+    }
+
+    .passed {
+      margin-top: 20px;
+    }
+
+    .tool-panel {
+      border-top: 1px solid var(--line);
+      margin-top: 22px;
+      padding-top: 20px;
+    }
+
+    .generator-controls {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      margin: 12px 0;
+    }
+
+    .control {
+      align-items: center;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: flex;
+      gap: 8px;
+      min-height: 42px;
+      padding: 8px 10px;
+    }
+
+    .control input {
+      flex: 0 0 auto;
+      min-height: auto;
+      width: auto;
+    }
+
+    .control span {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .range-row {
+      align-items: center;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 110px 1fr 42px;
+      margin-top: 8px;
+    }
+
+    input[type="range"] {
+      min-height: auto;
+      padding: 0;
+    }
+
+    .risk {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 14px 0 18px;
+      padding: 12px;
+    }
+
+    .risk strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      align-items: center;
+      display: flex;
+      gap: 8px;
+    }
+
+    .status-dot {
+      border-radius: 999px;
+      display: inline-block;
+      flex: 0 0 auto;
+      height: 10px;
+      width: 10px;
+    }
+
+    .status-pass {
+      background: var(--green);
+    }
+
+    .status-fail {
+      background: var(--red);
+    }
+
+    .toast {
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 18px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 820px) {
+      .grid,
+      .stats,
+      .generator-controls {
+        grid-template-columns: 1fr;
+      }
+
+      .input-row,
+      .topbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .range-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <strong>Password Strength Checker</strong>
+        <span>Cybersecurity awareness project by Rahul Battu</span>
+      </div>
+      <span class="hint">No password is stored or sent anywhere</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="stats">
+      <div class="stat"><strong>10,000</strong><span>dataset rows studied</span></div>
+      <div class="stat"><strong>6</strong><span>dataset columns</span></div>
+      <div class="stat"><strong>100%</strong><span>browser-only checking</span></div>
+    </div>
+
+    <div class="grid">
+      <section>
+        <h1>Check how strong a password is</h1>
+        <p>Type a sample password to see its strength score, passed checks, and safety suggestions. Use only a test password while recording the demo.</p>
+
+        <label for="passwordInput">Password</label>
+        <div class="input-row">
+          <input id="passwordInput" type="password" placeholder="Enter a sample password">
+          <button id="toggleBtn" class="secondary" type="button">Show</button>
+        </div>
+        <div class="actions">
+          <button id="checkBtn" type="button">Check Strength</button>
+          <button id="weakBtn" class="secondary" type="button">Weak Sample</button>
+          <button id="strongBtn" class="secondary" type="button">Strong Sample</button>
+        </div>
+
+        <div class="tool-panel">
+          <h2>Password Generator</h2>
+          <p>Create a strong sample password locally, then check it with the same scoring system.</p>
+
+          <div class="range-row">
+            <label for="lengthInput">Length</label>
+            <input id="lengthInput" type="range" min="8" max="32" value="16">
+            <strong id="lengthValue">16</strong>
+          </div>
+
+          <div class="generator-controls">
+            <label class="control"><input id="lowercaseOption" type="checkbox" checked><span>Lowercase</span></label>
+            <label class="control"><input id="uppercaseOption" type="checkbox" checked><span>Uppercase</span></label>
+            <label class="control"><input id="numberOption" type="checkbox" checked><span>Numbers</span></label>
+            <label class="control"><input id="specialOption" type="checkbox" checked><span>Special</span></label>
+          </div>
+
+          <div class="actions">
+            <button id="generateBtn" class="success" type="button">Generate Password</button>
+            <button id="copyBtn" class="secondary" type="button">Copy</button>
+          </div>
+          <div id="generatorMessage" class="toast" aria-live="polite"></div>
+        </div>
+
+        <div class="privacy">
+          This demo runs fully in your browser. It does not save passwords, upload passwords, or connect to any server.
+        </div>
+      </section>
+
+      <aside>
+        <h2>Result</h2>
+        <span id="badge" class="badge Weak">Ready</span>
+        <div id="score" class="score">0</div>
+        <div class="meter"><span id="meterBar" style="width: 0%; background: #b42318;"></span></div>
+        <p id="summary">Enter a sample password and run the check.</p>
+
+        <div class="risk">
+          <strong>Risk Estimate</strong>
+          <span id="crackTime">No password entered</span>
+        </div>
+
+        <h2>Suggestions</h2>
+        <ul id="suggestions">
+          <li>No suggestions yet.</li>
+        </ul>
+
+        <h2 class="passed">Passed Checks</h2>
+        <ul id="passedChecks">
+          <li>No checks passed yet.</li>
+        </ul>
+
+        <h2 class="passed">Security Checklist</h2>
+        <ul id="checklist" class="checklist">
+          <li><span class="status-dot status-fail"></span>Enter a password to start.</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <script src="src/password_checker.js"></script>
+  <script>
+    function render() {
+      const password = document.getElementById("passwordInput").value;
+      const result = PasswordStrengthChecker.checkPassword(password);
+      const badge = document.getElementById("badge");
+      const score = document.getElementById("score");
+      const meter = document.getElementById("meterBar");
+      const summary = document.getElementById("summary");
+      const suggestions = document.getElementById("suggestions");
+      const passedChecks = document.getElementById("passedChecks");
+      const checklist = document.getElementById("checklist");
+      const crackTime = document.getElementById("crackTime");
+      const color = result.strength === "Strong" ? "#15803d" : result.strength === "Medium" ? "#b45309" : "#b42318";
+
+      badge.className = `badge ${result.strength}`;
+      badge.textContent = result.strength;
+      score.textContent = `${result.score}/100`;
+      meter.style.width = `${result.score}%`;
+      meter.style.background = color;
+      summary.textContent = result.strength === "Strong"
+        ? "This password is strong for normal use."
+        : result.strength === "Medium"
+          ? "This password is usable but should be improved."
+          : "This password is weak and should not be used.";
+      crackTime.textContent = result.crackTime;
+      suggestions.innerHTML = "";
+      result.suggestions.forEach((text) => {
+        const item = document.createElement("li");
+        item.textContent = text;
+        suggestions.appendChild(item);
+      });
+
+      passedChecks.innerHTML = "";
+      const checks = result.passed.length ? result.passed : ["No checks passed yet."];
+      checks.forEach((text) => {
+        const item = document.createElement("li");
+        item.textContent = text;
+        passedChecks.appendChild(item);
+      });
+
+      checklist.innerHTML = "";
+      result.checklist.forEach((check) => {
+        const item = document.createElement("li");
+        const dot = document.createElement("span");
+        dot.className = `status-dot ${check.passed ? "status-pass" : "status-fail"}`;
+        item.appendChild(dot);
+        item.append(check.label);
+        checklist.appendChild(item);
+      });
+    }
+
+    function getGeneratorOptions() {
+      return {
+        length: Number(document.getElementById("lengthInput").value),
+        lowercase: document.getElementById("lowercaseOption").checked,
+        uppercase: document.getElementById("uppercaseOption").checked,
+        numbers: document.getElementById("numberOption").checked,
+        special: document.getElementById("specialOption").checked,
+      };
+    }
+
+    document.getElementById("checkBtn").addEventListener("click", render);
+    document.getElementById("passwordInput").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        render();
+      }
+    });
+    document.getElementById("weakBtn").addEventListener("click", () => {
+      document.getElementById("passwordInput").value = "rahul123";
+      render();
+    });
+    document.getElementById("strongBtn").addEventListener("click", () => {
+      document.getElementById("passwordInput").value = "Rahul@2026#Secure";
+      render();
+    });
+    document.getElementById("lengthInput").addEventListener("input", (event) => {
+      document.getElementById("lengthValue").textContent = event.target.value;
+    });
+    document.getElementById("generateBtn").addEventListener("click", () => {
+      const message = document.getElementById("generatorMessage");
+      try {
+        document.getElementById("passwordInput").value = PasswordStrengthChecker.generatePassword(getGeneratorOptions());
+        message.textContent = "Generated a strong sample password.";
+        render();
+      } catch (error) {
+        message.textContent = error.message;
+      }
+    });
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      const password = document.getElementById("passwordInput").value;
+      const message = document.getElementById("generatorMessage");
+      if (!password) {
+        message.textContent = "Generate or enter a password first.";
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(password);
+        message.textContent = "Copied to clipboard.";
+      } catch (error) {
+        message.textContent = "Copy was blocked by the browser. Select the password and copy it manually.";
+      }
+    });
+    document.getElementById("toggleBtn").addEventListener("click", () => {
+      const input = document.getElementById("passwordInput");
+      const button = document.getElementById("toggleBtn");
+      input.type = input.type === "password" ? "text" : "password";
+      button.textContent = input.type === "password" ? "Show" : "Hide";
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("sample") === "weak") {
+      document.getElementById("passwordInput").value = "rahul123";
+      render();
+    } else if (params.get("sample") === "strong") {
+      document.getElementById("passwordInput").value = "Rahul@2026#Secure";
+      render();
+    }
+  </script>
+</body>
+</html>
