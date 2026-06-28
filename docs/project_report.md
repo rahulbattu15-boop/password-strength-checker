@@ -30,6 +30,7 @@ I used a dataset with 10,000 passwords. It has information like the password its
 
 - I updated the README and final submission documents.
 
+<<<<<<< HEAD
 ## Result
 
 The project works by checking a password and saying if it's Weak, Medium or Strong. It also gives suggestions like using characters adding big letters,  adding numbers, adding special characters, and not using common passwords.
@@ -37,3 +38,16 @@ The project works by checking a password and saying if it's Weak, Medium or Stro
 ##
 
 This project is good, for learning about cybersecurity because it teaches users how to measure password strength. We can make it better by adding a password generator checking for leaked passwords and using a machine learning model.
+=======
+- I added advanced Week 3 features like a password generator, security checklist and risk estimate.
+
+- I improved the browser demo layout and mobile controls.
+
+## Result
+
+The project works by checking a password and saying if it's Weak, Medium or Strong. It also gives suggestions like using characters adding big letters, adding numbers, adding special characters, and not using common passwords. The project can also generate a strong sample password and explain which password safety rules passed.
+
+##
+
+This project is good, for learning about cybersecurity because it teaches users how to measure password strength. We can make it better by adding safe leaked-password checking and using a machine learning model.
+>>>>>>> master

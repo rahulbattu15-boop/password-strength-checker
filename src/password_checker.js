@@ -37,6 +37,39 @@
     return "Weak";
   }
 
+<<<<<<< HEAD
+=======
+  function getChecklist(password) {
+    const hasInput = password.trim().length > 0;
+    return [
+      { label: "At least 12 characters", passed: password.length >= 12 },
+      { label: "Lowercase letters", passed: /[a-z]/.test(password) },
+      { label: "Uppercase letters", passed: /[A-Z]/.test(password) },
+      { label: "Numbers", passed: /\d/.test(password) },
+      { label: "Special characters", passed: /[^A-Za-z0-9]/.test(password) },
+      { label: "Not a common password", passed: hasInput && !commonPasswords.has(password.toLowerCase()) },
+      { label: "No repeated character pattern", passed: hasInput && !hasRepeatedCharacters(password) },
+      { label: "No simple sequence", passed: hasInput && !hasSimpleSequence(password) },
+    ];
+  }
+
+  function estimateCrackTime(score, passwordLength) {
+    if (passwordLength === 0) {
+      return "No password entered";
+    }
+    if (score >= 90) {
+      return "Very hard to guess";
+    }
+    if (score >= 75) {
+      return "Hard to guess";
+    }
+    if (score >= 45) {
+      return "Could be guessed with effort";
+    }
+    return "Easy to guess";
+  }
+
+>>>>>>> master
   function checkPassword(input) {
     const password = normalizePassword(input);
     const lower = password.toLowerCase();
@@ -49,6 +82,11 @@
         score: 0,
         strength: "Weak",
         passed,
+<<<<<<< HEAD
+=======
+        checklist: getChecklist(""),
+        crackTime: estimateCrackTime(0, 0),
+>>>>>>> master
         suggestions: ["Enter a password to check its strength."],
       };
     }
@@ -122,14 +160,83 @@
       score,
       strength: getStrength(score),
       passed,
+<<<<<<< HEAD
+=======
+      checklist: getChecklist(password),
+      crackTime: estimateCrackTime(score, password.length),
+>>>>>>> master
       suggestions: suggestions.length
         ? suggestions
         : ["Great work. This password follows the main safety rules."],
     };
   }
 
+<<<<<<< HEAD
   const api = {
     checkPassword,
+=======
+  function generatePassword(options) {
+    const settings = Object.assign({
+      length: 16,
+      lowercase: true,
+      uppercase: true,
+      numbers: true,
+      special: true,
+    }, options || {});
+
+    const pools = [
+      { enabled: settings.lowercase, chars: "abcdefghijkmnopqrstuvwxyz" },
+      { enabled: settings.uppercase, chars: "ABCDEFGHJKLMNPQRSTUVWXYZ" },
+      { enabled: settings.numbers, chars: "23456789" },
+      { enabled: settings.special, chars: "!@#$%&*?" },
+    ].filter((pool) => pool.enabled);
+
+    if (!pools.length) {
+      throw new Error("Select at least one character type.");
+    }
+
+    const length = Math.min(Math.max(Number(settings.length) || 16, pools.length), 32);
+    const password = [];
+
+    pools.forEach((pool) => {
+      password.push(randomChar(pool.chars));
+    });
+
+    const allChars = pools.map((pool) => pool.chars).join("");
+    while (password.length < length) {
+      password.push(randomChar(allChars));
+    }
+
+    return shuffle(password).join("");
+  }
+
+  function randomChar(chars) {
+    const cryptoApi = typeof crypto !== "undefined" ? crypto : null;
+    if (cryptoApi && cryptoApi.getRandomValues) {
+      const values = new Uint32Array(1);
+      cryptoApi.getRandomValues(values);
+      return chars[values[0] % chars.length];
+    }
+    return chars[Math.floor(Math.random() * chars.length)];
+  }
+
+  function shuffle(items) {
+    const copy = items.slice();
+    for (let index = copy.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      const value = copy[index];
+      copy[index] = copy[swapIndex];
+      copy[swapIndex] = value;
+    }
+    return copy;
+  }
+
+  const api = {
+    checkPassword,
+    estimateCrackTime,
+    generatePassword,
+    getChecklist,
+>>>>>>> master
     getStrength,
     hasRepeatedCharacters,
     hasSimpleSequence,

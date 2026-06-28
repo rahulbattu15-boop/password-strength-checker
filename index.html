@@ -15,6 +15,11 @@
       --amber: #b45309;
       --red: #b42318;
       --blue: #2563eb;
+<<<<<<< HEAD
+=======
+      --blue-dark: #1d4ed8;
+      --teal: #0f766e;
+>>>>>>> master
     }
 
     * {
@@ -32,6 +37,12 @@
       background: var(--paper);
       border-bottom: 1px solid var(--line);
       padding: 18px 24px;
+<<<<<<< HEAD
+=======
+      position: sticky;
+      top: 0;
+      z-index: 2;
+>>>>>>> master
     }
 
     .topbar,
@@ -129,11 +140,33 @@
       padding: 10px 14px;
     }
 
+<<<<<<< HEAD
+=======
+    button:hover {
+      background: var(--blue-dark);
+    }
+
+>>>>>>> master
     .secondary {
       background: #e7eef6;
       color: var(--ink);
     }
 
+<<<<<<< HEAD
+=======
+    .secondary:hover {
+      background: #d7e3f0;
+    }
+
+    .success {
+      background: var(--teal);
+    }
+
+    .success:hover {
+      background: #115e59;
+    }
+
+>>>>>>> master
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -228,9 +261,111 @@
       margin-top: 20px;
     }
 
+<<<<<<< HEAD
     @media (max-width: 820px) {
       .grid,
       .stats {
+=======
+    .tool-panel {
+      border-top: 1px solid var(--line);
+      margin-top: 22px;
+      padding-top: 20px;
+    }
+
+    .generator-controls {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      margin: 12px 0;
+    }
+
+    .control {
+      align-items: center;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: flex;
+      gap: 8px;
+      min-height: 42px;
+      padding: 8px 10px;
+    }
+
+    .control input {
+      flex: 0 0 auto;
+      min-height: auto;
+      width: auto;
+    }
+
+    .control span {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .range-row {
+      align-items: center;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 110px 1fr 42px;
+      margin-top: 8px;
+    }
+
+    input[type="range"] {
+      min-height: auto;
+      padding: 0;
+    }
+
+    .risk {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 14px 0 18px;
+      padding: 12px;
+    }
+
+    .risk strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      align-items: center;
+      display: flex;
+      gap: 8px;
+    }
+
+    .status-dot {
+      border-radius: 999px;
+      display: inline-block;
+      flex: 0 0 auto;
+      height: 10px;
+      width: 10px;
+    }
+
+    .status-pass {
+      background: var(--green);
+    }
+
+    .status-fail {
+      background: var(--red);
+    }
+
+    .toast {
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 18px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 820px) {
+      .grid,
+      .stats,
+      .generator-controls {
+>>>>>>> master
         grid-template-columns: 1fr;
       }
 
@@ -239,6 +374,13 @@
         align-items: stretch;
         flex-direction: column;
       }
+<<<<<<< HEAD
+=======
+
+      .range-row {
+        grid-template-columns: 1fr;
+      }
+>>>>>>> master
     }
   </style>
 </head>
@@ -276,6 +418,33 @@
           <button id="strongBtn" class="secondary" type="button">Strong Sample</button>
         </div>
 
+<<<<<<< HEAD
+=======
+        <div class="tool-panel">
+          <h2>Password Generator</h2>
+          <p>Create a strong sample password locally, then check it with the same scoring system.</p>
+
+          <div class="range-row">
+            <label for="lengthInput">Length</label>
+            <input id="lengthInput" type="range" min="8" max="32" value="16">
+            <strong id="lengthValue">16</strong>
+          </div>
+
+          <div class="generator-controls">
+            <label class="control"><input id="lowercaseOption" type="checkbox" checked><span>Lowercase</span></label>
+            <label class="control"><input id="uppercaseOption" type="checkbox" checked><span>Uppercase</span></label>
+            <label class="control"><input id="numberOption" type="checkbox" checked><span>Numbers</span></label>
+            <label class="control"><input id="specialOption" type="checkbox" checked><span>Special</span></label>
+          </div>
+
+          <div class="actions">
+            <button id="generateBtn" class="success" type="button">Generate Password</button>
+            <button id="copyBtn" class="secondary" type="button">Copy</button>
+          </div>
+          <div id="generatorMessage" class="toast" aria-live="polite"></div>
+        </div>
+
+>>>>>>> master
         <div class="privacy">
           This demo runs fully in your browser. It does not save passwords, upload passwords, or connect to any server.
         </div>
@@ -288,6 +457,14 @@
         <div class="meter"><span id="meterBar" style="width: 0%; background: #b42318;"></span></div>
         <p id="summary">Enter a sample password and run the check.</p>
 
+<<<<<<< HEAD
+=======
+        <div class="risk">
+          <strong>Risk Estimate</strong>
+          <span id="crackTime">No password entered</span>
+        </div>
+
+>>>>>>> master
         <h2>Suggestions</h2>
         <ul id="suggestions">
           <li>No suggestions yet.</li>
@@ -297,6 +474,14 @@
         <ul id="passedChecks">
           <li>No checks passed yet.</li>
         </ul>
+<<<<<<< HEAD
+=======
+
+        <h2 class="passed">Security Checklist</h2>
+        <ul id="checklist" class="checklist">
+          <li><span class="status-dot status-fail"></span>Enter a password to start.</li>
+        </ul>
+>>>>>>> master
       </aside>
     </div>
   </main>
@@ -312,6 +497,11 @@
       const summary = document.getElementById("summary");
       const suggestions = document.getElementById("suggestions");
       const passedChecks = document.getElementById("passedChecks");
+<<<<<<< HEAD
+=======
+      const checklist = document.getElementById("checklist");
+      const crackTime = document.getElementById("crackTime");
+>>>>>>> master
       const color = result.strength === "Strong" ? "#15803d" : result.strength === "Medium" ? "#b45309" : "#b42318";
 
       badge.className = `badge ${result.strength}`;
@@ -324,6 +514,10 @@
         : result.strength === "Medium"
           ? "This password is usable but should be improved."
           : "This password is weak and should not be used.";
+<<<<<<< HEAD
+=======
+      crackTime.textContent = result.crackTime;
+>>>>>>> master
       suggestions.innerHTML = "";
       result.suggestions.forEach((text) => {
         const item = document.createElement("li");
@@ -338,6 +532,29 @@
         item.textContent = text;
         passedChecks.appendChild(item);
       });
+<<<<<<< HEAD
+=======
+
+      checklist.innerHTML = "";
+      result.checklist.forEach((check) => {
+        const item = document.createElement("li");
+        const dot = document.createElement("span");
+        dot.className = `status-dot ${check.passed ? "status-pass" : "status-fail"}`;
+        item.appendChild(dot);
+        item.append(check.label);
+        checklist.appendChild(item);
+      });
+    }
+
+    function getGeneratorOptions() {
+      return {
+        length: Number(document.getElementById("lengthInput").value),
+        lowercase: document.getElementById("lowercaseOption").checked,
+        uppercase: document.getElementById("uppercaseOption").checked,
+        numbers: document.getElementById("numberOption").checked,
+        special: document.getElementById("specialOption").checked,
+      };
+>>>>>>> master
     }
 
     document.getElementById("checkBtn").addEventListener("click", render);
@@ -354,6 +571,36 @@
       document.getElementById("passwordInput").value = "Rahul@2026#Secure";
       render();
     });
+<<<<<<< HEAD
+=======
+    document.getElementById("lengthInput").addEventListener("input", (event) => {
+      document.getElementById("lengthValue").textContent = event.target.value;
+    });
+    document.getElementById("generateBtn").addEventListener("click", () => {
+      const message = document.getElementById("generatorMessage");
+      try {
+        document.getElementById("passwordInput").value = PasswordStrengthChecker.generatePassword(getGeneratorOptions());
+        message.textContent = "Generated a strong sample password.";
+        render();
+      } catch (error) {
+        message.textContent = error.message;
+      }
+    });
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      const password = document.getElementById("passwordInput").value;
+      const message = document.getElementById("generatorMessage");
+      if (!password) {
+        message.textContent = "Generate or enter a password first.";
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(password);
+        message.textContent = "Copied to clipboard.";
+      } catch (error) {
+        message.textContent = "Copy was blocked by the browser. Select the password and copy it manually.";
+      }
+    });
+>>>>>>> master
     document.getElementById("toggleBtn").addEventListener("click", () => {
       const input = document.getElementById("passwordInput");
       const button = document.getElementById("toggleBtn");
