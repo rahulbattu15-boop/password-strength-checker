@@ -1,46 +1,92 @@
-# Week 3 Progress Report
+# \# Week 3 Progress Report
 
-## Project
+# 
 
-Password Strength Checker
+# \## Project
 
-## Completed Tasks
+# 
 
-### Day 15
+# Password Strength Checker
 
-- I added a password generator.
-- Users can choose length and character types.
+# 
 
-### Day 16
+# \## Completed Tasks
 
-- I added a security checklist.
-- I added a simple risk estimate.
+# 
 
-### Day 17
+# \### Day 15
 
-- I improved the UI layout.
-- I added generator controls and a clearer result panel.
+# 
 
-### Day 18
+# \- I added a password generator.
 
-- I reviewed performance.
-- I kept the checker fully browser-based and fast.
+# \- The users are able to define the length and type of characters.
 
-### Day 19
+# 
 
-- I planned user testing.
-- I wrote down feedback and confusion points.
+# \### Day 16
 
-### Day 20
+# 
 
-- I fixed user testing issues.
-- I improved messages and automatic checking for generated passwords.
+# \- I added a security checklist.
 
-### Day 21
+# \- I added a basic risk assessment.
 
-- I reviewed all Week 3 features.
-- I updated documentation and planned Week 4.
+# 
 
-## Result
+# \### Day 17
 
-Week 3 is complete. The project now has advanced features, better UI, more tests, and updated documentation.
+# 
+
+# \- I improved the layout of the user interface.
+
+# \- I added the controls of generator and result panel.
+
+# 
+
+# \### Day 18
+
+# 
+
+# \- I checked the performance.
+
+# \- I ensured that the checker remained fully browser based and efficient.
+
+# 
+
+# \### Day 19
+
+# 
+
+# \- I prepared a plan for user testing.
+
+# \- I wrote down the feedback and the areas of confusion.
+
+# 
+
+# \### Day 20
+
+# 
+
+# \- I addressed the user testing concerns.
+
+# \- I refined the messages and automatic password testing.
+
+# 
+
+# \### Day 21
+
+# 
+
+# \- I reviewed all Week 3 features.
+
+# \- I updated documentation and planned Week 4.
+
+# 
+
+# \## Result
+
+# 
+
+# Week 3 is done. The project has gained advanced features, UI improvements, more testing and documentation updates.
+

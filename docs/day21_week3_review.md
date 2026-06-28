@@ -1,33 +1,66 @@
-# Day 21: Week 3 Review
+# \# Day 21: Week 3 Review
 
-## Work Reviewed
+# 
 
-Week 3 advanced features are complete.
+# \## Code Reviewed
 
-## Completed Features
+# 
 
-- Password generator
-- Generator length slider
-- Character type options
-- Copy button
-- Security checklist
-- Risk estimate
-- UI polish
-- Mobile layout polish
-- Additional tests
+# Features from week 3 have been completed.
 
-## Screenshots For README
+# 
 
-The README now includes screenshots for:
+# \## Completed Features
 
-- weak password demo
-- strong password demo
-- generator demo
+# 
 
-## Week 4 Plan
+# \- Password generator
 
-Next, I will focus on deployment, final README polish, demo video recording, and final submission.
+# \- Length slider for generator
 
-## Result
+# \- Types of characters
 
-The project is ready for Week 4.
+# \- Copy button
+
+# \- Security checklist
+
+# \- Estimate of risk
+
+# \- UI improvements
+
+# \- Mobile layout improvements
+
+# \- Additional testing
+
+# 
+
+# \## Screenshots For README
+
+# 
+
+# Screenshots have been added to README for:
+
+# 
+
+# \- Demo of weak password
+
+# \- Demo of strong password
+
+# \- Demo of generator
+
+# 
+
+# \## Week 4 Plan
+
+# 
+
+# Now it’s time to move onto deployment and other final tasks of the project.
+
+# 
+
+# \## Result
+
+# 
+
+# The project is ready for Week 4.
+

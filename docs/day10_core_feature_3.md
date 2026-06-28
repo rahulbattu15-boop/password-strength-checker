@@ -2,9 +2,9 @@
 
 ## Work Completed
 
-I implemented the third core feature: browser demo integration.
+I worked on the core feature which is browser demo integration.
 
-The demo lets a user type a sample password and check the result directly in the browser. It shows the score, strength label, progress bar, and suggestions.
+The demo lets users type a sample password and see the result, in the browser. It shows how strong the password is, a strength label, a progress bar and some suggestions.
 
 ## Sample Output
 
@@ -15,9 +15,11 @@ Input:
 Output:
 
 - Strength: Strong
+
 - Score: 100/100
-- Suggestion: Great work. This password follows the main safety rules.
+
+- Suggestion: work. This password follows the safety rules. The password strength is strong.
 
 ## Result
 
-All three core features are now working together end-to-end.
+All three core features are now working well together from start to finish. The browser demo integration is complete.

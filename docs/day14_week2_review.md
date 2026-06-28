@@ -2,33 +2,33 @@
 
 ## Core Features Reviewed
 
-The three Week 2 core features are complete:
+All three core features for Week 2 are done:
 
 - Password scoring
 - Password improvement suggestions
 - Browser demo
 
-## What Works Now
+## Things That Are Working
 
-- The checker gives a score out of 100.
-- It labels passwords as Weak, Medium, or Strong.
-- It warns about common passwords.
-- It warns about repeated characters.
-- It warns about simple sequences.
-- It gives improvement suggestions.
-- It works in the browser without saving or uploading passwords.
-- The main checker functions have basic tests.
+- It provides a score of 100.
+- It categorizes the passwords as Weak, Medium, or Strong.
+- It informs about the use of common passwords.
+- It informs about the repetition of characters.
+- It informs about the sequence.
+- It provides improvement suggestions.
+- It operates in the browser without the need to save or upload passwords.
+- Basic testing of main functions is included.
 
-## Demo Video Plan
+## Demo Video Steps
 
-For the 30 second demo video:
+Steps for 30 seconds demo video:
 
-1. Open the browser demo.
-2. Enter a weak password such as `123456`.
-3. Show the Weak result and suggestions.
-4. Enter a strong password such as `Rahul@2026#Secure`.
-5. Show the Strong result and privacy note.
+- Launch browser demo.
+- Enter weak password like `123456`.
+- Display Weak result and suggestions.
+- Enter strong password like `Rahul@2026#Secure`.
+- Display Strong result and privacy message.
 
 ## Week 3 Plan
 
-Next, I will work on advanced features such as a password generator, better UI polish, and more user testing.
+I will focus next on advanced features such as password generator and further UI polish.

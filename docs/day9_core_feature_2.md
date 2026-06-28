@@ -1,23 +1,46 @@
-# Day 9: Core Feature 2
+# \# Day 9: Core Feature 2
 
-## Work Completed
+# 
 
-I implemented the second core feature: password improvement suggestions.
+# \## Work Done
 
-The suggestion system is connected to the password score. When a password is weak or medium, it tells the user what to improve.
+# 
 
-## Suggestions Added
+# Implementation of the second core feature: suggestions for password improvement.
 
-- Use at least 8 characters.
-- Use 12 or more characters for better security.
-- Add lowercase letters.
-- Add uppercase letters.
-- Add numbers.
-- Add special characters.
-- Avoid common passwords.
-- Avoid repeated characters.
-- Avoid simple sequences.
+# 
 
-## Result
+# The suggestion module is associated with the password score. If the password score is poor or moderate, the user will know what needs to be improved.
 
-The scoring feature and suggestion feature now work together. Users can see both the password strength and the reason for improving it.
+# 
+
+# \## Suggestions Added
+
+# 
+
+# \- Use a minimum of 8 characters.
+
+# \- Use at least 12 characters for better protection.
+
+# \- Include lowercase characters.
+
+# \- Include uppercase characters.
+
+# \- Include numbers.
+
+# \- Include special characters.
+
+# \- Don’t use common passwords.
+
+# \- Don’t use repetitive characters.
+
+# \- Don’t use basic sequences.
+
+# 
+
+# \## Effect
+
+# 
+
+# The two features have been integrated into each other. Both the password strength and its reasons for improvement are shown to users.
+

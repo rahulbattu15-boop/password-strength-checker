@@ -1,47 +1,94 @@
-# Week 2 Progress Report
+# \# Week 2 Progress Report
 
-## Project
+# 
 
-Password Strength Checker
+# \## Project
 
-## Completed Tasks
+# 
 
-### Day 8
+# Password Strength Checker
 
-- I built the password scoring system.
-- I tested it with empty, weak, medium, and strong passwords.
+# 
 
-### Day 9
+# \## Completed Tasks
 
-- I added improvement suggestions.
-- I connected suggestions to the password score.
+# 
 
-### Day 10
+# \### Day 8
 
-- I connected the checker to the browser demo.
-- I tested the full flow from input to result.
+# 
 
-### Day 11
+# \- Password scoring system implemented.
 
-- I added validation for empty and invalid input.
-- I improved handling for common passwords, repeated characters, and simple sequences.
+# \- It was tested with blank, weak, medium, and strong passwords.
 
-### Day 12
+# 
 
-- I wrote tests for the main checker functions.
-- I tested weak, medium, strong, empty, and pattern-based passwords.
+# \### Day 9
 
-### Day 13
+# 
 
-- I fixed bugs found during testing.
-- I cleaned the code and updated the README.
+# \- Suggestions for improvements were added.
 
-### Day 14
+# \- Suggestions were connected to the password score.
 
-- I reviewed all Week 2 core features.
-- I prepared the short demo video plan.
-- I planned Week 3 advanced features.
+# 
 
-## Result
+# \### Day 10
 
-Week 2 is complete. The password checker has working core features, tests, and a browser demo.
+# 
+
+# \- Connection of the checker with the browser demo was done.
+
+# \- Testing of the whole process – from input to output.
+
+# 
+
+# \### Day 11
+
+# 
+
+# \- Validation for blank and invalid inputs was implemented.
+
+# \- Improvements were made for checking common passwords, repeating characters, and simple patterns.
+
+# 
+
+# \### Day 12
+
+# 
+
+# \- Tests for the most important functions were written.
+
+# \- Weak, medium, strong, blank, and pattern-based passwords were tested.
+
+# 
+
+# \### Day 13
+
+# 
+
+# \- Bugs were fixed according to the tests.
+
+# \- Code cleaning and updating of the README file were made.
+
+# 
+
+# \### Day 14
+
+# 
+
+# \- Reviewing of all Week 2 core features was done.
+
+# \- Preparation of the short demo video plan was made.
+
+# \- Planning of Week 3 advanced features.
+
+# 
+
+# \## Result
+
+# 
+
+# Week 2 completed. The password checker has core features implemented, tests and browser demo.
+

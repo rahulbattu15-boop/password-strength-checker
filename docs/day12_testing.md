@@ -2,21 +2,27 @@
 
 ## Work Completed
 
-I wrote basic tests for the main password checker functions.
+Today I worked on the password checker. I wrote some basic tests for the main functions that check passwords.
 
 ## Tests Added
 
-- Empty password test
-- Common password test
-- Medium password test
-- Strong password test
-- Wrong type input test
-- Repeated character pattern test
-- Simple sequence pattern test
+- I made a test for a password
+
+- I made a test for a common password
+
+- I made a test for a medium password
+
+- I made a test for a strong password
+
+- I made a test for wrong type input
+
+- I made a test for repeated character pattern
+
+- I made a test for simple sequence pattern
 
 ## Test Result
 
-All tests passed.
+The good news is that all the tests for the password checker passed.
 
 Command used:
 
@@ -24,4 +30,4 @@ Command used:
 
 ## User Testing Notes
 
-I tested the full flow with weak, medium, and strong sample passwords. The checker showed the correct score, strength label, and suggestions.
+I tried the flow with some sample passwords that are weak, medium and strong. The password checker showed the score for the passwords it showed the correct strength label, for the passwords and it gave some suggestions for the passwords.
